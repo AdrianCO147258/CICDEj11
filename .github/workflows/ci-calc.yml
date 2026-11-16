@@ -1,0 +1,23 @@
+name: ci-calc
+on: [push]
+jobs:
+    comp:
+        name: compilar y testear calc
+        runs-on: windows-latest
+        steps:
+          -name: Repositorio
+           uses: actions/checkout@v4
+          -name: Dir salida
+           run: mkdir -p out
+          -name: 
+           run: javac -d out $(find src -name "*.java")
+          -name: 
+           uses: actions/checkout@v4
+           run: java out/CalculadoraTest.java
+          -name:
+           run: jar cfe out/calc.jar Main -C out
+          -name: Upload
+           uses: actions/upload-artifact@v4
+           with:
+            name: app-java
+            path: out/calc.jar
