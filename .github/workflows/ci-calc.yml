@@ -16,8 +16,6 @@ jobs:
               run: mkdir -p out
             - name: Compile
               run: javac src/*java
-            - name: Repositorio
-              uses: actions/checkout@v4
             - name: To jar
               run: jar cfe out/calc.jar Main -C out ""
             - name: Execute
