@@ -18,7 +18,8 @@ jobs:
               run: javac src/*java
             - name: To jar
               run: jar cfe out/calc.jar Main -C out ""
-            
+            - name: Execute
+              java -jar out/calc.jar
             - name: Upload
               uses: actions/upload-artifact@v4
               with:
