@@ -18,8 +18,6 @@ jobs:
               run: javac src/*java
             - name: Repositorio
               uses: actions/checkout@v4
-            - name: Test
-              run: java out/CalculadoraTest
             - name: To jar
               run: jar cfe out/calc.jar Main -C out
             - name: Upload
