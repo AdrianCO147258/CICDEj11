@@ -17,7 +17,7 @@ jobs:
             - name: Compile
               run: javac src/*java
             - name: To jar
-              run: jar cfe out/calc.jar Main -C out 
+              run: jar cfe out/calc.jar Main -C out ""
             - name: Execute
               run: java -jar out/calc.jar
             - name: Upload
