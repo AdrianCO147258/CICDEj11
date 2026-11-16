@@ -6,18 +6,18 @@ jobs:
         runs-on: windows-latest
         steps:
           -name: Repositorio
-           uses: actions/checkout@v4
+           uses: actions/checkout@v5
           -name: Dir salida
            run: mkdir -p out
           -name: Compile
            run: javac -d out $(find src -name "*.java")
           -name: Test
-           uses: actions/checkout@v4
+           uses: actions/checkout@v5
            run: java out/CalculadoraTest.java
           -name: To jar
            run: jar cfe out/calc.jar Main -C out
           -name: Upload
-           uses: actions/upload-artifact@v4
+           uses: actions/upload-artifact@v5
            with:
             name: app-java
             path: out/calc.jar
