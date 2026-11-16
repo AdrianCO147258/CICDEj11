@@ -12,12 +12,10 @@ jobs:
                 java-version: '21'
             - name: Repositorio
               uses: actions/checkout@v4
-            - name: Debug list
-              run: dir -r
             - name: Dir salida
               run: mkdir -p out
             - name: Compile
-              run: javac -d out $(find src -name "*.java")
+              run: javac src/*java
             - name: Repositorio
               uses: actions/checkout@v4
             - name: Test
