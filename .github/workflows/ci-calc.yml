@@ -19,7 +19,7 @@ jobs:
             - name: Repositorio
               uses: actions/checkout@v4
             - name: To jar
-              run: jar cfe out/calc.jar Main -C out ../out
+              run: jar cfe out/calc.jar Main -C out ""
             - name: Execute
               run: java -jar out/calc.jar
             - name: Upload
