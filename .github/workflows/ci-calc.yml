@@ -12,6 +12,8 @@ jobs:
                 java-version: '21'
             - name: Repositorio
               uses: actions/checkout@v4
+            - name: Debug list
+              run: dir -r
             - name: Dir salida
               run: mkdir -p out
             - name: Compile
