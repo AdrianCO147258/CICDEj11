@@ -17,7 +17,7 @@ jobs:
             - name: Compile
               run: javac -d out src/*java
             - name: testear
-              run: java out/CalculadoraTest
+              run: java -ea -cp out CalculadoraTest
             - name: To jar
               run: jar cfe out/calc.jar Main -C out ""
             - name: Execute
