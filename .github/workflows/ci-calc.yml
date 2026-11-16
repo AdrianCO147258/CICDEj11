@@ -5,8 +5,13 @@ jobs:
         name: compilar y testear calc
         runs-on: windows-latest
         steps:
+          -name: Config Java
+           uses: actions/setup-java@v4
+           with:
+             distribution: temurin
+             java-version: '21'
           -name: Repositorio
-           uses: actions/checkout@v5
+           uses: actions/checkout@v4
           -name: Dir salida
            run: mkdir -p out
           -name: Compile
@@ -17,7 +22,7 @@ jobs:
           -name: To jar
            run: jar cfe out/calc.jar Main -C out
           -name: Upload
-           uses: actions/upload-artifact@v5
+           uses: actions/upload-artifact@v4
            with:
             name: app-java
             path: out/calc.jar
