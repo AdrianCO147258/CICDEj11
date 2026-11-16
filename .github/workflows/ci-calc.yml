@@ -16,8 +16,9 @@ jobs:
               run: mkdir -p out
             - name: Compile
               run: javac -d out $(find src -name "*.java")
+            - name: Repositorio
+              uses: actions/checkout@v4
             - name: Test
-              uses: actions/checkout@v5
               run: java out/CalculadoraTest.java
             - name: To jar
               run: jar cfe out/calc.jar Main -C out
