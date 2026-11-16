@@ -15,7 +15,7 @@ jobs:
             - name: Dir salida
               run: mkdir -p out
             - name: Compile
-              run: javac src/*java
+              run: javac -d out src/*java
             - name: testear
               run: java -cp out/CalculadoraTest CalculadoraTest
             - name: To jar
