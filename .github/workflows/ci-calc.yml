@@ -14,12 +14,14 @@ jobs:
               uses: actions/checkout@v4
             - name: Dir salida
               run: mkdir -p out
+            - name: testear
+              run: java -ea -cp out CalculadoraTest
             - name: Compile
               run: javac src/*java
             - name: To jar
               run: jar cfe out/calc.jar Main -C out ""
             - name: Execute
-              java -jar out/calc.jar
+              run: java -jar out/calc.jar
             - name: Upload
               uses: actions/upload-artifact@v4
               with:
